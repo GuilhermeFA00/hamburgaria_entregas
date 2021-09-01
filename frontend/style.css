@@ -1,0 +1,23 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --main-color: rgb(22, 16, 16);
+  --aux-color: rgb(189, 60, 0);
+  --text-color: rgb(252, 112, 56);
+  --textTitle-color: rgb(235, 72, 72);
+  --hover-color: rgb(114, 6, 6);
+}
+
+.app-head {
+  background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/20190725-delish-air-fryer-burger-ehg-horizontal-3-1565299631.png?crop=0.905xw:0.907xh;0.0192xw,0.00641xh&resize=1200:*");
+  background-size: cover;
+  height: 1000px;
+}
