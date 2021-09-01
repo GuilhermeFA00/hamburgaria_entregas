@@ -18,19 +18,28 @@
 <body>
     <!--Head and navbar-->
     <div class="app-head">
-        <div class="brand">
-            <h1>Bruttus Burgers</h1>
-            <img src="./src/imgs/Screenshot_20210901-192609.png" alt="">
+        <div class="navbar">
+            <div class="brand">
+                <h1>Bruttus Burgers</h1>
+                <img src="./src/imgs/Screenshot_20210901-192609.png" alt="">
+            </div>
+            <div class="menu">
+                <ul class="items">
+                    <li class="item"><button id="home-btn"><i class="fas fa-home"></i></button></li>
+                    <li class="item"><button id="singin-btn"><i class="fas fa-sign-in-alt"></i></button></li>
+                    <li class="item"><button id="singup-btn"><i class="fas fa-user-plus"></i></button></li>
+                    <li class="item"><button id="contact-btn"><i class="fas fa-envelope-square"></i></button></li>
+                </ul>
+            </div>
         </div>
-        <div class="menu">
-            <ul class="items">
-                <li class="item"><button id="home-btn"><i class="fas fa-home"></i></button></li>
-                <li class="item"><button id="singin-btn"><i class="fas fa-sign-in-alt"></i></button></li>
-                <li class="item"><button id="singup-btn"><i class="fas fa-user-plus"></i></button></li>
-                <li class="item"><button id="contact-btn"><i class="fas fa-envelope-square"></i></button></li>
-            </ul>
+        <div class="scroll-ftproducts">
+            <h2>Veja nossos hamburgueres!</h2>
+            <button id="scroll-img">change</button>
+            <img src="./src/imgs/hamb1.jpg" alt="">
         </div>
     </div>
+
+    <script src="./main.js"></script>
 </body>
 
 </html>
