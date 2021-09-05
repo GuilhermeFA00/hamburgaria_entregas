@@ -17,7 +17,7 @@ body {
 }
 
 .app-head {
-  background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/20190725-delish-air-fryer-burger-ehg-horizontal-3-1565299631.png?crop=0.905xw:0.907xh;0.0192xw,0.00641xh&resize=1200:*");
+  background-image: url("https://dbdzm869oupei.cloudfront.net/img/vinylrugs/preview/31845.png");
   background-size: cover;
   height: 1000px;
 }
@@ -55,12 +55,25 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 200px;
 }
 .scroll-ftproducts h2 {
   color: var(--textTitle-color);
 }
-#scroll-img {
-  width: 250px;
-  height: 250px;
-  margin-top: 30px;
+.scroll-ftproducts ul {
+  display: flex;
+}
+#scrool-img {
+  font-size: 120px;
+  position: absolute;
+  bottom: 100px;
+  right: 0;
+  margin-right: 300px;
+  color: rgb(0, 0, 0);
+  opacity: 0.8;
+  cursor: pointer;
+}
+#image-header {
+  width: 400px;
+  height: 350px;
 }

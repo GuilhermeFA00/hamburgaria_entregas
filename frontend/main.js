@@ -1,5 +1,5 @@
 //Scroll features products
-let imgScrool = document.getElementById('scroll-img');
+let imgScrool = document.getElementById('scrool-img');
 let returnScrool = document.getElementById('return-img')
 let imgHeader = document.getElementById('image-header');
 var clickCounter = 0;
