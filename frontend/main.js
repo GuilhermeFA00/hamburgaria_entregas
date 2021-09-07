@@ -26,13 +26,53 @@ function changeImg_next() {
     }
 }
 
-//Login e register
+//Login and register
 const registerBtn = document.getElementById('sign-up');
 const singupContainer = document.querySelector('.singup-container')
 
 user_login()
+
 function user_login() {
     registerBtn.addEventListener('click', function () {
-        singupContainer.classList.toggle('show-singup-container');
+        imgScrool.classList.toggle('new-scroll-img');
+        let newHtml = `
+        <div class="signup-container">
+        <div class="signup-header">
+            <h2>Create Account</h2>
+        </div>
+        <form id="sp-form" class="sp-form">
+            <div class="sp-form-control">
+                <label for="username">Username</label>
+                <input type="text" placeholder="florinpop17" id="username" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="sp-form-control">
+                <label for="username">Email</label>
+                <input type="email" placeholder="a@florin-pop.com" id="email" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="sp-form-control">
+                <label for="username">Password</label>
+                <input type="password" placeholder="Password" id="password" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="sp-form-control">
+                <label for="username">Password check</label>
+                <input type="password" placeholder="Password two" id="password2" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <button>Submit</button>
+        </form>
+    </div>
+        `
+        singupContainer.innerHTML = newHtml;
     });
 }
