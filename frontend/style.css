@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 :root {
@@ -17,7 +17,7 @@ body {
 }
 
 .app-head {
-  background-image: url("https://dbdzm869oupei.cloudfront.net/img/vinylrugs/preview/31845.png");
+  background-image: url("https://i2.wp.com/completelydelicious.com/wp-content/uploads/2014/07/IMG_7994.jpg");
   background-size: cover;
   height: 1000px;
 }
@@ -40,16 +40,36 @@ body {
   list-style: none;
   margin: 10px;
 }
-.item i {
+#navitem {
   cursor: pointer;
+  font-size: 25px;
+}
+#navitem:hover {
+  color: var(--hover-color);
+}
+#shp-cart {
+  color: yellow;
+  font-size: 45px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+#shp-cart:hover {
+  color: var(--hover-color);
+}
+#items-numbers {
+  background-color: aqua;
+  width: 17px;
+  border-radius: 50%;
+  color: rgb(10, 111, 243);
+  display: flex;
+  justify-content: center;
 }
 .brand {
   margin-top: 15px;
   margin-left: 40px;
 }
-.brand img {
-  width: 125px;
-  height: 125px;
+.brand:hover {
+  color: var(--hover-color);
 }
 .scroll-ftproducts {
   display: flex;
@@ -59,6 +79,11 @@ body {
 }
 .scroll-ftproducts h2 {
   color: var(--textTitle-color);
+  background-color: gray;
+  opacity: 0.8;
+  width: max-content;
+  border-radius: 15%;
+  margin-bottom: 20px;
 }
 .scroll-ftproducts ul {
   display: flex;
@@ -66,14 +91,17 @@ body {
 #scrool-img {
   font-size: 120px;
   position: absolute;
-  bottom: 100px;
+  bottom: 25px;
   right: 0;
-  margin-right: 300px;
+  margin-right: 280px;
   color: rgb(0, 0, 0);
   opacity: 0.8;
   cursor: pointer;
 }
+#scrool-img:hover {
+  color: var(--hover-color);
+}
 #image-header {
-  width: 400px;
-  height: 350px;
+  width: 620px;
+  height: 413px;
 }
