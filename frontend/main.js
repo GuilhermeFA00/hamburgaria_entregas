@@ -25,3 +25,14 @@ function changeImg_next() {
         imgHeader.src = './src/imgs/hamb3.jpg';
     }
 }
+
+//Login e register
+const registerBtn = document.getElementById('sign-up');
+const singupContainer = document.querySelector('.singup-container')
+
+user_login()
+function user_login() {
+    registerBtn.addEventListener('click', function () {
+        singupContainer.classList.toggle('show-singup-container');
+    });
+}

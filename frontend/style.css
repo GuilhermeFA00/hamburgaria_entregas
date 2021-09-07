@@ -16,6 +16,7 @@ body {
   --hover-color: rgb(114, 6, 6);
 }
 
+/*Header and apr*/
 .app-head {
   background-image: url("https://i2.wp.com/completelydelicious.com/wp-content/uploads/2014/07/IMG_7994.jpg");
   background-size: cover;
@@ -40,11 +41,11 @@ body {
   list-style: none;
   margin: 10px;
 }
-#navitem {
+.item i {
   cursor: pointer;
   font-size: 25px;
 }
-#navitem:hover {
+.item i:hover {
   color: var(--hover-color);
 }
 #shp-cart {
@@ -104,4 +105,11 @@ body {
 #image-header {
   width: 620px;
   height: 413px;
+}
+
+/*Login*/
+.show-singup-container {
+  background-color: blue;
+  width: 100px;
+  height: 80px;
 }
