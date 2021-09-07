@@ -99,14 +99,8 @@ body {
   opacity: 0.8;
   cursor: pointer;
 }
-.new-scroll-img {
-  font-size: 120px;
-  bottom: 25px;
-  right: 0;
-  margin-right: 280px;
-  color: rgb(0, 0, 0);
-  opacity: 0.8;
-  cursor: pointer;
+#new-scroll-img {
+  font-size: 0px;
 }
 #scrool-img:hover {
   color: var(--hover-color);
@@ -130,12 +124,26 @@ body {
 
 .signup-header {
   border-bottom: 1px solid #f0f0f0;
-  background-color: #f7f7f7;
+  background-color: var(--main-color);
   padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .signup-header h2 {
   margin: 0;
+}
+
+#signup-exit {
+  display: flex;
+  cursor: pointer;
+  color: var(--aux-color);
+  margin-left: 330px;
+  margin-bottom: 30px;
+  background-color: var(--main-color);
+  width: 20px;
+  border-radius: 50%;
+  justify-content: center;
 }
 
 .sp-form {
@@ -206,8 +214,8 @@ body {
 }
 
 .sp-form button {
-  background-color: #8e44ad;
-  border: 2px solid #8e44ad;
+  background-color: var(--aux-color);
+  border: 2px solid var(--aux-color);
   border-radius: 4px;
   color: #fff;
   display: block;

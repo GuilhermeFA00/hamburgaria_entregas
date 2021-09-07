@@ -4,7 +4,7 @@ let returnScrool = document.getElementById('return-img')
 let imgHeader = document.getElementById('image-header');
 var clickCounter = 0;
 
-imgScrool.addEventListener('click', function () {
+imgScrool.addEventListener('click', () => {
     if (clickCounter >= 2) {
         clickCounter = -1;
         changeImg_next();
@@ -26,53 +26,55 @@ function changeImg_next() {
     }
 }
 
+
 //Login and register
 const registerBtn = document.getElementById('sign-up');
 const singupContainer = document.querySelector('.singup-container')
 
-user_login()
+user_login();
 
 function user_login() {
     registerBtn.addEventListener('click', function () {
-        imgScrool.classList.toggle('new-scroll-img');
         let newHtml = `
         <div class="signup-container">
         <div class="signup-header">
-            <h2>Create Account</h2>
+            <h2>Cadastre-se</h2>
         </div>
         <form id="sp-form" class="sp-form">
+            <button id="signup-exit"><i class="fas fa-times"></i></button>
             <div class="sp-form-control">
                 <label for="username">Username</label>
-                <input type="text" placeholder="florinpop17" id="username" />
+                <input type="text" placeholder="usuário18" id="username" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
             <div class="sp-form-control">
                 <label for="username">Email</label>
-                <input type="email" placeholder="a@florin-pop.com" id="email" />
+                <input type="email" placeholder="hello@xxx.com" id="email" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
             <div class="sp-form-control">
-                <label for="username">Password</label>
+                <label for="username">Senha</label>
                 <input type="password" placeholder="Password" id="password" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
             <div class="sp-form-control">
-                <label for="username">Password check</label>
+                <label for="username">Confirme a senha</label>
                 <input type="password" placeholder="Password two" id="password2" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
-            <button>Submit</button>
+            <button>Enviar</button>
         </form>
     </div>
         `
+        imgScrool.id = "new-scroll-img";
         singupContainer.innerHTML = newHtml;
     });
 }
