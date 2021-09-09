@@ -34,7 +34,7 @@ const singupContainer = document.querySelector('.singup-container')
 user_login();
 
 function user_login() {
-    registerBtn.addEventListener('click', function () {
+    registerBtn.addEventListener('click', () => {
         let newHtml = `
         <div class="signup-container">
         <div class="signup-header">
@@ -76,5 +76,38 @@ function user_login() {
         `
         imgScrool.id = "new-scroll-img";
         singupContainer.innerHTML = newHtml;
+    });
+}
+
+
+//Filtering categorys
+const filterBtns = document.querySelectorAll('.carte-filter-btn');
+const filterIts = document.querySelectorAll('.carte-filter-item');
+
+addEventListener('DOMContentLoaded', () => {
+    filterBtns[0].classList.add('carte-active-btn');
+});
+
+filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        showFilteredContent(btn)
+    });
+});
+
+function showFilteredContent(btn) {
+    filterIts.forEach((item) => {
+        if (item.classList.contains(btn.id)) {
+            resetActiveBtn();
+            btn.classList.add('carte-active-btn');
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
+
+function resetActiveBtn() {
+    filterBtns.forEach((btn) => {
+        btn.classList.remove('carte-active-btn');
     });
 }
