@@ -111,3 +111,91 @@ function resetActiveBtn() {
         btn.classList.remove('carte-active-btn');
     });
 }
+
+
+//CART
+const productsLoad = document.querySelector('.products-apr');
+const cartContainer = document.querySelector('.cart-container');
+let cartItemID = 0;
+const cartList = document.querySelector('.cart-list');
+
+cartEvents();
+function cartEvents() {
+    addEventListener('DOMContentLoaded', () => {
+        loadJSON();
+    });
+
+    let cartBtn = document.getElementById('cart-btn');
+    cartBtn.addEventListener('click', () => {
+        cartContainer.classList.toggle('show-cart-container');
+    });
+
+    productsLoad.addEventListener('click', purchaseProduct);
+}
+
+function loadJSON() {
+    fetch('products.json')
+        //I'm using "Arrow Functions" inside promises, to reduce my code
+        .then(response => response.json())
+        .then(data => {
+            let Newhtml = '';
+            //Returning all data from JSON file
+            data.forEach(product => {
+                Newhtml += `
+            <div class = "product-item">
+            <div class = "product-img">
+                <img src = "${product.imgSrc}" alt = "product image">
+                <button type = "button" class = "add-to-cart-btn">
+                    <i class = "fas fa-shopping-cart"></i>Add To Cart
+                </button>
+            </div>
+            <div class = "product-content">
+                <h3 class = "product-name">${product.name}</h3>
+                <p class = "product-value">$${product.value}</p>
+            </div>
+        </div>
+            ` ;
+            });
+            productsLoad.innerHTML = Newhtml;
+        })
+        //it is necessary to use a Local server or something related to load the content, otherwise an error will be returned.
+        .catch(error => {
+            alert(`User live server or local server`);
+            //URL scheme must be "http" or "https" for CORS request. You need to be serving your index.html locally or have your site hosted on a live server somewhere for the Fetch API to work properly.
+        })
+}
+
+function purchaseProduct(ev) {
+    if (ev.target.classList.contains('add-to-cart-btn')) {
+        let product = ev.target.parentElement.parentElement;
+        getProductInfo(product);
+    }
+}
+
+function getProductInfo(product) {
+    let productInfo = {
+        ID: cartItemID,
+        imgSrc: product.querySelector('product-img img').src,
+        name: product.querySelector('product-name').textContent,
+        value: product.querySelector('product-value').textContent
+    }
+    cartItemID++;
+    addToCL(productInfo);
+}
+
+function addToCL(product) {
+    const cartItem = document.createElement('div');
+    cartItem.classList.add('cart-item');
+    cartItem.setAttribute('data-id', `${product.id}`);
+    cartItem.innerHTML = `
+    <img src="${product.imgSrc}" alt="product image">
+    <div class="cart-item-info">
+    <h3 class="cart-item-name">${product.name}</h3>
+    <span class="cart-item-value">${product.price}</span>
+    </div>
+    <button type="button" class="cart-item-del-btn">
+        <i class="fas fa-times"></i>
+    </button>
+    `;
+    cartList.appendChild(cartItem);
+}

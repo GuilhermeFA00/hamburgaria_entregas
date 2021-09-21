@@ -9,9 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="./style.css" />
 </head>
 
@@ -23,8 +23,18 @@
                 <h1>Bruttus Burgers</h1>
             </div>
             <div class="cart">
-                <i id="shp-cart" class="fas fa-dolly"></i>
-                <h4 id="items-numbers">0</h4>
+                <i id="cart-btn" class="fas fa-dolly"></i>
+                <h4 id="cart-info">0</h4>
+
+                <div class="cart-container">
+                    <div class="cart-list">
+                    </div>
+
+                    <div class="cart-total">
+                        <h3>Total: R$</h3>
+                        <span id="cart-total-value"></span>
+                    </div>
+                </div>
             </div>
             <div class="menu">
                 <ul class="items">
@@ -50,123 +60,51 @@
         </div>
     </div>
 
-    <!--Carte-->
+    <!--Carte(The menu with relevant information about the restaurant)-->
     <div class="menu-carte">
         <div class="carte-categorys">
             <div class="carte-container">
                 <div>
                     <div class="carte-apr">
-                        <h1>Confira nosso cardápio e já faça seu pedido</h1>
+                        <h1>Principais informações sobre a Bruttus</h1>
                     </div>
 
                     <div class="carte-filter-btns">
-                        <button type="button" class="carte-filter-btn" id="all">TODOS</button>
-                        <button type="button" class="carte-filter-btn" id="new">NOVOS</button>
-                        <button type="button" class="carte-filter-btn" id="house-recommendation">Recomendação da
-                            casa</button>
-                        <button type="button" class="carte-filter-btn" id="specials">Os especiais</button>
+                        <button type="button" class="carte-filter-btn" id="infos">INFORMAÇÕES</button>
+                        <button type="button" class="carte-filter-btn" id="asst">AVALIAÇÕES</button>
+                        <button type="button" class="carte-filter-btn" id="schedules">HORÁRIOS DE FUNCIONAMENTO</button>
+                        <button type="button" class="carte-filter-btn" id="localization">LOCALIZAÇÃO</button>
                     </div>
                     <div class="carte-filter-items">
-                        <div class="carte-filter-item all new">
+                        <div class="carte-filter-item infos asst">
                             <div class="carte-item-img">
-                                <img src="images/1.jpg" alt="Item image">
-                                <span class="discount">20%</span>
-                            </div>
-                            <div class="carte-item-info">
-                                <p>Cool Item Name</p>
-                                <div>
-                                    <span class="old-price">$20.50</span>
-                                    <span class="new-price">$16.70</span>
-                                </div>
-                                <a href="#" class="carte-add-btn">Add to Cart</a>
+                                <img src="" alt="Item image">
                             </div>
                         </div>
-                        <div class="carte-filter-item all house-recommendation">
+                        <div class="carte-filter-item infos schedules">
                             <div class="carte-item-img">
-                                <img src="images/2.jpg" alt="Item image">
-                                <span class="discount">20%</span>
+                                <img src="" alt="Item image">
                             </div>
-                            <div class="carte-item-info">
-                                <p>Cool Item Name</p>
-                                <div>
-                                    <span class="old-price">$20.50</span>
-                                    <span class="new-price">$16.70</span>
-                                </div>
-                                <a href="#" class="carte-add-btn">Add to Cart</a>
-                            </div>
+
                         </div>
-                        <div class="carte-filter-item all house-recommendation">
+                        <div class="carte-filter-item infos localization">
                             <div class="carte-item-img">
-                                <img src="images/3.jpg" alt="Item image">
-                                <span class="discount">20%</span>
+                                <img src="" alt="Item image">
                             </div>
-                            <div class="carte-item-info">
-                                <p>Cool Item Name</p>
-                                <div>
-                                    <span class="old-price">$20.50</span>
-                                    <span class="new-price">$16.70</span>
-                                </div>
-                                <a href="#" class="carte-add-btn">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="carte-filter-item all new">
-                            <div class="carte-item-img">
-                                <img src="images/4.jpg" alt="Item image">
-                                <span class="discount">20%</span>
-                            </div>
-                            <div class="carte-item-info">
-                                <p>Cool Item Name</p>
-                                <div>
-                                    <span class="old-price">$20.50</span>
-                                    <span class="new-price">$16.70</span>
-                                </div>
-                                <a href="#" class="carte-add-btn">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="carte-filter-item all specials">
-                            <div class="carte-item-img">
-                                <img src="images/5.jpg" alt="Item image">
-                                <span class="discount">20%</span>
-                            </div>
-                            <div class="carte-item-info">
-                                <p>Cool Item Name</p>
-                                <div>
-                                    <span class="old-price">$20.50</span>
-                                    <span class="new-price">$16.70</span>
-                                </div>
-                                <a href="#" class="carte-add-btn">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="carte-filter-item all new">
-                            <div class="carte-item-img">
-                                <img src="images/6.jpg" alt="Item image">
-                                <span class="discount">20%</span>
-                            </div>
-                            <div class="carte-item-info">
-                                <p>Cool Item Name</p>
-                                <div>
-                                    <span class="old-price">$20.50</span>
-                                    <span class="new-price">$16.70</span>
-                                </div>
-                                <a href="#" class="carte-add-btn">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="carte-filter-item all house-recommendation">
-                            <div class="carte-item-img">
-                                <img src="images/7.jpg" alt="Item image">
-                                <span class="discount">20%</span>
-                            </div>
-                            <div class="carte-item-info">
-                                <p>Cool Item Name</p>
-                                <div>
-                                    <span class="old-price">$20.50</span>
-                                    <span class="new-price">$16.70</span>
-                                </div>
-                                <a href="#" class="carte-add-btn">Add to Cart</a>
-                            </div>
+
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="products">
+        <div class="prodcuts-container">
+            <h1>--Façam suas escolhas--</h1>
+            <div class="products-apr">
+
             </div>
         </div>
     </div>

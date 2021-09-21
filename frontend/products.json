@@ -1,0 +1,37 @@
+[
+    {
+        "name": "X-MEGA",
+        "value": "17,50$",
+        "imgSrc": "src/imgs/products/prdc1.jpg"
+    },
+    {
+        "name": "Bacon Club",
+        "value": "11,00$",
+        "imgSrc": "src/imgs/products/prdc2.jpg"
+    },
+    {
+        "name": "Moda da Casa",
+        "value": "12,50$",
+        "imgSrc": "src/imgs/products/prdc3.jpg"
+    },
+    {
+        "name": "Australiano",
+        "value": "9,00$",
+        "imgSrc": "src/imgs/products/prdc4.jpg"
+    },
+    {
+        "name": "X-TUDO",
+        "value": "10,00$",
+        "imgSrc": "src/imgs/products/prdc5.jpg"
+    },
+    {
+        "name": "Vegan",
+        "value": "19,50$",
+        "imgSrc": "src/imgs/products/prdc6.jpg"
+    },
+    {
+        "name": "Bacon Duo",
+        "value": "14,00$",
+        "imgSrc": "src/imgs/products/prdc7.jpg"
+    }
+]
