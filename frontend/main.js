@@ -116,13 +116,16 @@ function resetActiveBtn() {
 //CART
 const productsLoad = document.querySelector('.products-apr');
 const cartContainer = document.querySelector('.cart-container');
-let cartItemID = 0;
+let cartItemID = 1;
 const cartList = document.querySelector('.cart-list');
+const cartCount_info = document.getElementById('cart-count-info');
+const cartTotal_value = document.getElementById('cart-total-value');
 
 cartEvents();
 function cartEvents() {
     addEventListener('DOMContentLoaded', () => {
         loadJSON();
+        loadCart();
     });
 
     let cartBtn = document.getElementById('cart-btn');
@@ -131,6 +134,8 @@ function cartEvents() {
     });
 
     productsLoad.addEventListener('click', purchaseProduct);
+
+    cartList.addEventListener('click', delProduct);
 }
 
 function loadJSON() {
@@ -174,13 +179,14 @@ function purchaseProduct(ev) {
 
 function getProductInfo(product) {
     let productInfo = {
-        ID: cartItemID,
-        imgSrc: product.querySelector('product-img img').src,
-        name: product.querySelector('product-name').textContent,
-        value: product.querySelector('product-value').textContent
+        id: cartItemID,
+        imgSrc: product.querySelector('.product-img img').src,
+        name: product.querySelector('.product-name').textContent,
+        value: product.querySelector('.product-value').textContent
     }
     cartItemID++;
     addToCL(productInfo);
+    saveProductInStrg(productInfo);
 }
 
 function addToCL(product) {
@@ -191,11 +197,71 @@ function addToCL(product) {
     <img src="${product.imgSrc}" alt="product image">
     <div class="cart-item-info">
     <h3 class="cart-item-name">${product.name}</h3>
-    <span class="cart-item-value">${product.price}</span>
+    <span class="cart-item-value">${product.value}</span>
     </div>
     <button type="button" class="cart-item-del-btn">
         <i class="fas fa-times"></i>
     </button>
     `;
     cartList.appendChild(cartItem);
+}
+
+function getProductFromStrg() {
+    return localStorage.getItem('products') ? JSON.parse(localStorage.getItem('products')) : [];
+}
+
+function findCartInfo() {
+    let products = getProductFromStrg();
+    let total = products.reduce((accumulator, product) => {
+        let value = parseFloat(product.value.substr(1));
+        return accumulator += value;
+    }, 0);
+
+    return {
+        total: total.toFixed(2),
+        productCount: products.length
+    }
+}
+
+function updateCartInfo() {
+    let cartInfo = findCartInfo();
+    cartCount_info.textContent = cartInfo.productCount;
+    cartTotal_value.textContent = cartInfo.total;
+}
+
+function saveProductInStrg(item) {
+    let products = getProductFromStrg();
+    products.push(item);
+    localStorage.setItem('products', JSON.stringify(products));
+    updateCartInfo();
+}
+
+function loadCart() {
+    let products = getProductFromStrg();
+    if (products.length < 1) {
+        cartItemID = 1;
+    } else {
+        cartItemID = products[products.length - 1].id;
+        cartItemID++;
+    }
+    products.forEach(product => addToCL(product));
+
+    updateCartInfo();
+}
+
+function delProduct(event) {
+    let cartItem;
+    if (event.target.tagName === "BUTTON") {
+        cartItem = event.target.parentElement;
+        cartItem.remove();
+    } else if (event.target.tagName === "I") {
+        cartItem = event.target.parentElement.parentElement;
+        cartItem.remove();
+    }
+    let products = getProductFromStrg();
+    let updateProducts_strg = products.filter(product => {
+        return product.id !== parseInt(cartItem.dataset.id);
+    });
+    localStorage.setItem('products', JSON.stringify(updateProducts_strg));
+    updateCartInfo();
 }
