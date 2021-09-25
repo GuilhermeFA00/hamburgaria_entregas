@@ -15,8 +15,12 @@ button {
   outline: 0;
 }
 
+a {
+  color: inherit;
+}
+
 :root {
-  --main-color: rgb(22, 16, 16);
+  --main-color: #1b1b1b;
   --aux-color: rgb(189, 60, 0);
   --text-color: rgb(252, 112, 56);
   --textTitle-color: rgb(235, 72, 72);
@@ -25,13 +29,13 @@ button {
 
 /*Header and apr*/
 .app-head {
-  background-image: url("https://i2.wp.com/completelydelicious.com/wp-content/uploads/2014/07/IMG_7994.jpg");
+  background-image: url("https://www.teahub.io/photos/full/6-63195_food-wallpaper-foods-wallpaper-hd.jpg");
   background-size: cover;
   height: 800px;
   padding-top: 10px;
 }
 .navbar {
-  background-color: var(--aux-color);
+  background-color: var(--main-color);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -51,15 +55,26 @@ button {
   flex-direction: row;
 }
 .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   list-style: none;
   margin: 10px;
+  cursor: pointer;
+  font-size: 25px;
+  border: 2px solid #fff;
+  border-radius: 100px;
+  height: 35px;
+  width: 35px;
 }
 .item i {
   cursor: pointer;
-  font-size: 25px;
+  font-size: 20px;
+  transition: all 0.5s;
 }
-.item i:hover {
+
+.item:hover {
   color: var(--hover-color);
 }
 
