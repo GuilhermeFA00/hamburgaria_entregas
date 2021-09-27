@@ -61,12 +61,6 @@ a {
   cursor: pointer;
   list-style: none;
   margin: 10px;
-  cursor: pointer;
-  font-size: 25px;
-  border: 2px solid #fff;
-  border-radius: 100px;
-  height: 35px;
-  width: 35px;
 }
 .item i {
   cursor: pointer;
@@ -186,42 +180,78 @@ a {
 .brand:hover {
   color: var(--hover-color);
 }
-.scroll-ftproducts {
+
+.apr-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-top: 70px;
+}
+
+.apr-list {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-top: 160px;
+  height: 300px;
+  transform: translateX(0);
+  transition: all 1s ease-in-out;
 }
-.scroll-ftproducts h2 {
-  color: var(--textTitle-color);
-  background-color: gray;
-  opacity: 0.8;
-  width: max-content;
-  border-radius: 15%;
-  margin-bottom: 20px;
+
+.apr-list-item {
+  margin-right: 30px;
+  position: relative;
 }
-.scroll-ftproducts ul {
-  display: flex;
+
+.apr-list-item:hover .apr-list-item-img {
+  transform: scale(1.2);
+  margin: 0 30px;
+  opacity: 0.5;
 }
-#scrool-img {
+
+.apr-list-item:hover .apr-list-item-title,
+.apr-list-item:hover .apr-list-item-desc,
+.apr-list-item:hover .apr-list-item-button {
+  opacity: 1;
+}
+
+.apr-list-item-img {
+  transition: all 1s ease-in-out;
+  width: 270px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.apr-list-item-title {
+  background-color: #333;
+  padding: 0 10px;
+  font-size: 32px;
+  font-weight: bold;
+  position: absolute;
+  top: 10%;
+  left: 50px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+
+.apr-list-item-desc {
+  background-color: #333;
+  padding: 10px;
+  font-size: 14px;
+  position: absolute;
+  top: 30%;
+  left: 50px;
+  width: 230px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+
+.arrow {
   font-size: 120px;
   position: absolute;
-  bottom: 135px;
+  top: 90px;
   right: 0;
-  margin-right: 280px;
-  color: rgb(0, 0, 0);
-  opacity: 0.8;
+  color: lightgray;
+  opacity: 0.5;
   cursor: pointer;
-}
-#new-scroll-img {
-  font-size: 0px;
-}
-#scrool-img:hover {
-  color: var(--hover-color);
-}
-#image-header {
-  width: 620px;
-  height: 413px;
 }
 
 /*Login*/

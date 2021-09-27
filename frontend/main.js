@@ -1,92 +1,38 @@
-//Scroll features products
-let imgScrool = document.getElementById('scrool-img');
-let returnScrool = document.getElementById('return-img')
-let imgHeader = document.getElementById('image-header');
-var clickCounter = 0;
+//Scroll rating messages
+const arrowIcon = document.querySelectorAll(".arrow");
+const msgsList = document.querySelectorAll(".apr-list");
 
-imgScrool.addEventListener('click', () => {
-    if (clickCounter >= 2) {
-        clickCounter = -1;
-        changeImg_next();
-    } if (clickCounter <= 2) {
-        clickCounter++;
-        changeImg_next();
-    }
+arrowIcon.forEach((arrow, index) => {
+    const index_num = msgsList[index].querySelectorAll("img").length;
+    let click_counter = 0;
+    arrow.addEventListener('click', () => {
+        const ratio = Math.floor(window.innerWidth / 270);
+        click_counter++;
+        if (index_num - (4 + click_counter) + (4 - ratio) >= 0) {
+            msgsList[index].style.transform = `translateX(${msgsList[index].computedStyleMap().get("transform")[0].x.value - 300
+                }px)`;
+        } else {
+            msgsList[index].style.transform = "translateX(0)";
+            click_counter = 0;
+        }
+    });
 });
 
-function changeImg_next() {
-    if (clickCounter == 0) {
-        imgHeader.src = './src/imgs/hamb1.jpg';
-    }
-    if (clickCounter == 1) {
-        imgHeader.src = './src/imgs/hamb2.jpg';
-    }
-    if (clickCounter == 2) {
-        imgHeader.src = './src/imgs/hamb3.jpg';
-    }
-}
-
-
-//Login and register
+//Login and register redirect
 const registerBtn = document.getElementById('sign-up');
-const singupContainer = document.querySelector('.singup-container')
+const signIn_btn = document.getElementById('sign-in');
 
-user_login();
+redirect_loginPage();
 
-function user_login() {
+function redirect_loginPage() {
     registerBtn.addEventListener('click', () => {
-        let newHtml = `
-        <div class="form_container">
-        <form class="form" id="login">
-            <h1 class="form__title">Login</h1>
-            <div class="form__message form__message--error"></div>
-            <div class="form__input-group">
-                <input type="text" class="form__input" autofocus placeholder="Username or email">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Password">
-                <div class="form__input-error-message"></div>
-            </div>
-            <button class="form__button" type="submit">Continue</button>
-            <p class="form__text">
-                <a href="#" class="form__link">Forgot your password?</a>
-            </p>
-            <p class="form__text">
-                <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
-            </p>
-        </form>
-        <form class="form form--hidden" id="createAccount">
-            <h1 class="form__title">Create Account</h1>
-            <div class="form__message form__message--error"></div>
-            <div class="form__input-group">
-                <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Username">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="text" class="form__input" autofocus placeholder="Email Address">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Password">
-                <div class="form__input-error-message"></div>
-            </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Confirm password">
-                <div class="form__input-error-message"></div>
-            </div>
-            <button class="form__button" type="submit">Continue</button>
-            <p class="form__text">
-                <a class="form__link" href="./" id="linkLogin">Already have an account? Sign in</a>
-            </p>
-        </form>
-    </div>
-        `
-        imgScrool.id = "new-scroll-img";
-        singupContainer.innerHTML = newHtml;
+        window.location.href = "http://127.0.0.1:5500/login/login.html";
+    });
+
+    signIn_btn.addEventListener('click', () => {
+        window.location.href = "http://127.0.0.1:5500/login/register.html";
     });
 }
-
 
 //Filtering categorys
 const filterBtns = document.querySelectorAll('.carte-filter-btn');
