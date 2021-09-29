@@ -19,18 +19,13 @@ arrowIcon.forEach((arrow, index) => {
 });
 
 //Login and register redirect
-const registerBtn = document.getElementById('sign-up');
 const signIn_btn = document.getElementById('sign-in');
 
 redirect_loginPage();
 
 function redirect_loginPage() {
-    registerBtn.addEventListener('click', () => {
-        window.location.href = "http://127.0.0.1:5500/login/login.html";
-    });
-
     signIn_btn.addEventListener('click', () => {
-        window.location.href = "http://127.0.0.1:5500/login/register.html";
+        window.location.href = "http://127.0.0.1:5500/login/login.html";
     });
 }
 
