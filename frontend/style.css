@@ -254,16 +254,6 @@ a {
   cursor: pointer;
 }
 
-.hamb-car {
-  display: flex;
-  justify-content: center;
-}
-
-.hamb-car img {
-  height: 370px;
-  width: 440px;
-}
-
 /*Login*/
 .form_container {
   width: 400px;
@@ -385,7 +375,7 @@ a {
 .menu-carte {
   width: 100%;
   overflow-x: hidden;
-  background-image: url(https://www.nepdigitalhub.com/wp-content/uploads/2021/03/v462-n-130-textureidea_1.jpg);
+  background: #34568b;
 }
 .menu-carte .carte-container {
   max-width: 1400px;
@@ -598,14 +588,14 @@ a {
 }
 .products {
   padding: 6rem 0;
-  background-image: url(https://wallpaperboat.com/wp-content/uploads/2019/10/high-resolution-black-background-09.jpg);
+  background: #34568b;
 }
 .products h1 {
   text-align: center;
   font-size: 2.2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--textTitle-color);
+  color: var(--main-color);
   margin-bottom: 3rem;
 }
 .product-item {
