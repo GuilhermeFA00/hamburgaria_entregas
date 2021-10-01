@@ -96,7 +96,7 @@ function loadJSON() {
             //Returning all data from JSON file
             data.forEach(product => {
                 Newhtml += `
-            <div class = "product-item">
+        <div class = "product-item">
             <div class = "product-img">
                 <img src = "${product.imgSrc}" alt = "product image">
                 <button type = "button" class = "add-to-cart-btn">

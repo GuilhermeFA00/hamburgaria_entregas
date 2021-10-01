@@ -254,6 +254,16 @@ a {
   cursor: pointer;
 }
 
+.hamb-car {
+  display: flex;
+  justify-content: center;
+}
+
+.hamb-car img {
+  height: 370px;
+  width: 440px;
+}
+
 /*Login*/
 .form_container {
   width: 400px;
@@ -375,7 +385,7 @@ a {
 .menu-carte {
   width: 100%;
   overflow-x: hidden;
-  background-color: var(--aux-color);
+  background-image: url(https://www.nepdigitalhub.com/wp-content/uploads/2021/03/v462-n-130-textureidea_1.jpg);
 }
 .menu-carte .carte-container {
   max-width: 1400px;
@@ -585,31 +595,31 @@ a {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  display: block;
 }
 .products {
   padding: 6rem 0;
-  display: block;
+  background-image: url(https://wallpaperboat.com/wp-content/uploads/2019/10/high-resolution-black-background-09.jpg);
 }
 .products h1 {
   text-align: center;
   font-size: 2.2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--rose-quartz);
+  color: var(--textTitle-color);
   margin-bottom: 3rem;
 }
 .product-item {
   margin: 1rem 0;
-  display: block;
 }
 .product-img {
-  background: var(--main-color);
+  background: #9b2335;
   padding: 3rem 0;
-  height: 350px;
+  height: 300px;
+  width: 200px;
   overflow: hidden;
   position: relative;
   display: flex;
+  margin: 25px;
 }
 .product-img img {
   position: absolute;
@@ -621,6 +631,7 @@ a {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   width: 60%;
+  height: 100px;
   margin: 0 auto;
   transition: var(--trans);
   -webkit-transition: var(--trans);
@@ -664,7 +675,7 @@ a {
   margin-right: 0.4rem;
 }
 .add-to-cart-btn:hover {
-  background-color: #23272a;
+  background-color: #5b5ea6;
 }
 .add-to-cart-btn:hover {
   color: var(--emerald);
@@ -692,6 +703,8 @@ a {
   font-weight: 500;
   opacity: 0.6;
 }
-.product-apr {
-  display: block;
+.products-apr {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
